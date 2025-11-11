@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>情緒光譜牆 Emotion Spectrum</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #74ABE2, #5563DE);
+      transition: background 0.5s ease;
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+      color: white;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    .slider-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 300px;
+    }
+
+    input[type="range"] {
+      width: 100%;
+      accent-color: #fff;
+    }
+
+    #emotion-text {
+      font-size: 1.8em;
+      margin-top: 20px;
+      font-weight: bold;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .cursor-glow {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.4);
+      pointer-events: none;
+      mix-blend-mode: screen;
+      transform: translate(-50%, -50%);
+      transition: transform 0.1s linear;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎭 情緒光譜牆</h1>
+  <div class="slider-container">
+    <input id="emotionRange" type="range" min="0" max="100" value="50">
+    <div id="emotion-text">平靜 😊</div>
+  </div>
+  <div class="cursor-glow"></div>
+
+  <script>
+    const range = document.getElementById('emotionRange');
+    const text = document.getElementById('emotion-text');
+    const glow = document.querySelector('.cursor-glow');
+    const body = document.body;
+
+    const emotions = [
+      { max: 20, label: '悲傷 😢', color: ['#141E30', '#243B55'] },
+      { max: 40, label: '焦慮 😟', color: ['#1e3c72', '#2a5298'] },
+      { max: 60, label: '平靜 😊', color: ['#74ABE2', '#5563DE'] },
+      { max: 80, label: '快樂 😄', color: ['#00C9FF', '#92FE9D'] },
+      { max: 100, label: '興奮 🤩', color: ['#FF512F', '#DD2476'] }
+    ];
+
+    range.addEventListener('input', e => {
+      const val = e.target.value;
+      const emo = emotions.find(em => val <= em.max);
+      body.style.background = `linear-gradient(135deg, ${emo.color[0]}, ${emo.color[1]})`;
+      text.textContent = emo.label;
+      text.style.transform = 'scale(1.2)';
+      setTimeout(() => text.style.transform = 'scale(1)', 150);
+    });
+
+    document.addEventListener('mousemove', e => {
+      glow.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+    });
+  </script>
+</body>
+</html>
