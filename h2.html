@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{background-color:antiquewhite;}
+        h1{
+            background-color:antiquewhite;
+            padding: 10px;
+        }
+        h1:hover{
+            background-color:thistle;
+        }
+        .ins{
+            border-collapse: collapse;
+            width: 70%; /* 表格寬度 */            
+            margin-bottom: 40%;
+        }
+        th, td{
+            padding: 15px; /* 文字與邊框的間距 */
+            text-align: center;
+        }
+        td p{
+            text-align: center; 
+            line-height: 1.7; /* 行距更舒服 */
+        }
+        /* 圖片大小固定比例、且自動縮放 */
+        .car{
+            width: 250px;
+            height: auto;
+            border-radius: 50px;
+            border-style:groove;
+        }
+        a:link{color:black;}
+        a:visited{color: aquamarine;}
+        a:hover{color: coral;}
+        .title{background-color:gainsboro;}
+        
+       
+    </style>
+</head>
+<body>
+    <center>
+        <h1>BMW汽車介紹</h1>
+        <a href="#pg1">BMW X系列</a>
+        <a href="#pg2">BMW M系列</a>
+        <a href="#pg3">BMW I系列</a>
+        <table border="1" class="ins" id="pg1">
+            <tr>
+                <th colspan="4" class="title">BMW X系列</th>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    介紹
+                </td>
+                <td colspan="2">
+                    <p>
+                        品鑑BMW X系列，駕驭頂級豪華新境界！透過一絲不苟的座艙空間、頂尖智慧的
+                        BMW xDrive全時四輪驅動系統，以及卓越燃油效率的高效能引擎，帶您盡情領
+                        略BMW旗艦運動休旅壯闊大氣的嶄新格局，自信魅力不容忽視！
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <th colspan="4" class="title">相關車款</th>
+            </tr>
+            <tr>
+                <td>x1</td><td>x3</td><td>x5</td><td>x7</td>
+            </tr>
+            <tr>
+                <td><img src="x1.png" class="car"></td>
+                <td><img src="x3.png" class="car"></td>
+                <td><img src="x5.png" class="car"></td>
+                <td><img src="x7.png" class="car"></td>
+            </tr>
+        </table>
+
+        <table border="1" class="ins" id="pg2">
+            <tr>
+                <th colspan="4" class="title">BMW M系列</th>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    介紹
+                </td>
+                <td colspan="2">
+                    <p>
+                        BMW M系列指的是BMW原廠的高性能版本車型，以「BMW Motorsport」的「M」為標誌，
+                        地位與賓士的AMG和奧迪的RS系列相當。M系列車款涵蓋了從轎車、跑車到休旅車的多種車
+                        型，例如知名的M3、M4、M5以及其他車型。
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <th colspan="4" class="title">相關車款</th>
+            </tr>
+            <tr>
+                <td>m3</td><td>m4</td><td>m5</td><td>m8</td>
+            </tr>
+            <tr>
+                <td><img src="m3.png" class="car"></td>
+                <td><img src="m4.png" class="car"></td>
+                <td><img src="m5.png" class="car"></td>
+                <td><img src="m8.jpg" class="car"></td>
+            </tr>
+        </table>
+
+        <table border="1" class="ins" id="pg3">
+            <tr>
+                <th colspan="4" class="title">BMW I系列</th>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    介紹
+                </td>
+                <td colspan="2">
+                    <p>
+                        BMW i系列是該品牌旗下專注於純電動車的系列，強調創新科技、駕駛樂趣與豪華體驗，
+                        並涵蓋不同級距的車型，如休旅車iX1、iX2，轎跑i4，豪華房車i5，以及旗艦車型i7。
+                        這些車款都採用eDrive純電驅動技術，並透過 BMW Operating System 9 等先進科技，
+                        提供優異的性能與現代化的內裝。 
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <th colspan="4" class="title">相關車款</th>
+            </tr>
+            <tr>
+                <td>i3</td><td>i5</td><td>i7</td><td>i8</td>
+            </tr>
+            <tr>
+                <td><img src="i3.png" class="car"></td>
+                <td><img src="i5.jpg" class="car"></td>
+                <td><img src="i7.png" class="car"></td>
+                <td><img src="i8.png" class="car"></td>
+            </tr>
+        </table>
+    </center>
+</body>
+</html>
